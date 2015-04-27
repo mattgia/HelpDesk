@@ -8,7 +8,9 @@ This was more of a learning project than an attempt to make something
 that is actually publishable. 
 
 
-
+#### REQUIREMENTS ####
+JRE 1.8
+Tomcat 7 (or 8, probably)
 #### SETUP ####
 
 

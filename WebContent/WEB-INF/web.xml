@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>HelpDesk</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/blank.html</location>
+  </error-page>
+  <servlet>
+    <servlet-name>SimpleCaptchaServlet</servlet-name>
+    <servlet-class>nl.captcha.servlet.SimpleCaptchaServlet</servlet-class>
+    <init-param>
+      <param-name>width</param-name>
+      <param-value>250</param-value>
+    </init-param>
+    <init-param>
+      <param-name>height</param-name>
+      <param-value>75</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SimpleCaptchaServlet</servlet-name>
+    <url-pattern>/captcha</url-pattern>
+  </servlet-mapping>
+
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+               <dispatcher>REQUEST</dispatcher>
+    
+    </filter-mapping>
+  <filter>
+      <filter-name>MyFilter</filter-name>
+      <filter-class>com.cse13201.helpdesk.MyFilter</filter-class>
+      
+  </filter>
+</web-app>

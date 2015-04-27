@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>HelpDesk alpha 0.1</title>
+
+
+<script src="/HelpDesk/js/jq.js"></script>
+<script>
+function update() {
+	$.get("/HelpDesk", function(result) {
+		if(typeof $(result).find('div').html() != 'undefined')
+			{
+			window.location.replace("/HelpDesk");
+			}
+		
+	});
+
+}
+
+setInterval(function() {
+	update();
+}, 5000);
+</script>
+
+<style>
+ 
+</style>
+</head>
+
+
+<frameset rows="80%,20%" >
+<frame src="/HelpDesk/guest.jsp"/>
+<frame src="/HelpDesk/guestSend.jsp"/>
+
+</frameset>
+</html>
